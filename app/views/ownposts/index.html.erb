@@ -17,9 +17,10 @@
           <% if post.has_photo? %>
             <%= image_tag post.photo_path %>
           <% end %>  
-          <h2>
+          <td>
             <%= post.titulo %><%= link_to '  Edit', edit_post_path(post) %>
-          </h2>
+          </td>
+            <td><%= link_to 'Show', post %></td>
         </div>
       </div>
     <% end %>

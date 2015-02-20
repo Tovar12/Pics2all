@@ -75,6 +75,17 @@ class PostsController < ApplicationController
     end
   end
 
+    def download_image      
+      image_id = params[:id]
+      image_title = params[:title]
+      send_file(
+        "#{Rails.root}/public/photo_store/#{image_id}.jpg",
+        filename: "#{image_title}.jpg",
+        type: "application/jpg"
+      )
+    end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post
@@ -86,4 +97,6 @@ class PostsController < ApplicationController
       #@user = current_user
       params.require(:post).permit(:titulo, :extension, :categoria, :photo, :descripcion)
     end    
+
+
 end

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get 'welcome/index'
-
+  get "posts/download_image"
   resources :posts 
   resources :usuario_sessions
   resources :ownposts

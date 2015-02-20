@@ -50,10 +50,9 @@
         <div class="thumbnail tile-big ">
           <% if post.has_photo? %>
             <%= image_tag post.photo_path %>
-          <% end %>  
-          <h2>
-            <%= post.titulo %>
-          </h2>
+          <% end %>          
+          <td><%= post.titulo %></td>          
+          <td><%= link_to 'Show', post %></td>
         </div>
       </div>
     <% end %>

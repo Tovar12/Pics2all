@@ -1,11 +1,9 @@
-<h1>Ownposts#index</h1>
-<p>Find me in app/views/ownposts/index.html.erb</p>
 <%= @user.username %> 
 <br/>
 <%= @user.id %>
 <br>
 <h1>Imágenes que has subido</h1>
-
+s
 
 <br>
 
@@ -21,6 +19,7 @@
             <%= post.titulo %><%= link_to '  Edit', edit_post_path(post) %>
           </td>
             <td><%= link_to 'Show', post %></td>
+            <td><%= link_to 'Destroy', posts_destroy_url(@invoice, :id => post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </div>
       </div>
     <% end %>

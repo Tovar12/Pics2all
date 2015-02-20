@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   get 'welcome/index'
   get "posts/download_image"
+  get "posts/destroy"
   resources :posts 
   resources :usuario_sessions
   resources :ownposts

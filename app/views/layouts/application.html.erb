@@ -10,16 +10,16 @@
 <nav class='navbar navbar-default' >
 	<div class='navbar-inner' >
 		<ul class= 'nav navbar-nav'>
-			<li><%= link_to 'Inicio', root_path %></li>
+			<li><%= link_to 'Home', root_path %></li>
 			<!--<li><%= link_to 'Post', posts_path %></li>-->
 			<% if current_user %>
-				<li><%= link_to 'Nuevo artículo', new_post_path %></li>
-				<li><%= link_to "log out #{current_user.username}", logout_path %></li>
-				<li><%= link_to 'Mis imágenes', ownposts_path %></li>
-				<li><%= link_to 'Editar usuario', edit_usuario_path(current_user)%></li>
+				<li><%= link_to 'New post', new_post_path %></li>
+				<li><%= link_to "Log out #{current_user.username}", logout_path %></li>
+				<li><%= link_to 'My images', ownposts_path %></li>
+				<li><%= link_to 'Edit user', edit_usuario_path(current_user)%></li>
 			<% else %>
-				<li><%= link_to 'Registrarse', new_usuario_path %></li>
-				<li><%= link_to 'log in', login_path %></li>
+				<li><%= link_to 'Sign in', new_usuario_path %></li>
+				<li><%= link_to 'Log in', login_path %></li>
 			<% end %>
 		</ul>
 	</div>

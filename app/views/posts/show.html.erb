@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Titulo:</strong>
+  <strong>Title:</strong>
   <%= @post.titulo %>
 </p>
 
@@ -9,20 +9,16 @@
   <% if @post.has_photo?  %>
   	<%= image_tag @post.photo_path %>
   <% else %>
-  	<b>Problema al subir tu foto</b>
+  	<b>There is a problema uploading the photo</b>
   <% end %>
 </p>
 <p>
-  <strong>Descripción:</strong>
+  <strong>Description:</strong>
   <%= @post.descripcion %>
 </p>
 <p>
-  <strong>Categoria:</strong>
+  <strong>Category:</strong>
   <%= @post.categoria %>
-</p>
-<p>
-  <strong>URL:</strong>
-  <%= posts_path %>
 </p>
 <% post_id = @post.id.to_i %>
 <% post_title = @post.titulo %>

@@ -1,0 +1,27 @@
+<h1>Ownposts#index</h1>
+<p>Find me in app/views/ownposts/index.html.erb</p>
+<%= @user.username %> 
+<br/>
+<%= @user.id %>
+<br>
+<h1>Imágenes que has subido</h1>
+
+
+<br>
+
+<div class="images">
+  <div class="row" >
+    <% @posts.each do |post| %>
+      <div class="col-sm-6 col-md-3">
+        <div class="thumbnail tile-big ">
+          <% if post.has_photo? %>
+            <%= image_tag post.photo_path %>
+          <% end %>  
+          <h2>
+            <%= post.titulo %><%= link_to '  Edit', edit_post_path(post) %>
+          </h2>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

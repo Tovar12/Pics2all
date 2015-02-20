@@ -1,0 +1,23 @@
+<%= @categoria %>
+<br/>
+<p>Find me in app/views/welcome/index.html.erb</p>
+
+<h1>Listing posts</h1>
+<ul>
+  <% @posts.each do |post| %>
+
+    <% if post.categoria == @categoria %>
+    <h1>adentro</h1>
+	    <li>
+	      <h3><%= post.titulo %> 
+	      <td>
+	      <%= link_to 'Edit', edit_post_path(post) %>
+	      </td>
+	      </h3>
+	        <% if post.has_photo? %>
+	          <%= image_tag post.photo_path %>
+	    <% end %>    
+	    </li>
+	  <% end %>
+    <% end %>
+</ul>

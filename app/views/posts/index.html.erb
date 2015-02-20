@@ -1,0 +1,66 @@
+<h1>Listing posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th>Extension</th>
+      <th>Categoria</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.titulo %></td>
+        <td><%= post.extension %></td>
+        <td><%= post.categoria %></td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= form_tag("posts", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>  
+  <%= select_tag 'hola', options_for_select([
+    ['Animales' ,'Animales'], 
+    ['Aviones', 'Aviones'], 
+    ['Carros', 'Carros'], 
+    ['Todas', 'Todas']]) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
+<br>
+
+
+
+
+<br>
+
+<div class="images">
+  <div class="row" >
+    <% @posts.each do |post| %>
+      <div class="col-sm-6 col-md-3">
+        <div class="thumbnail tile-big ">
+          <% if post.has_photo? %>
+            <%= image_tag post.photo_path %>
+          <% end %>  
+          <h2>
+            <%= post.titulo %>
+          </h2>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+

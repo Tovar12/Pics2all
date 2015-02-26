@@ -28,7 +28,7 @@
       <div class="col-sm-6 col-md-3">
         <div class="thumbnail tile-big ">
           <% if post.has_photo? %>
-            <%= image_tag post.photo_path, width: 300, heigth: 300 %>
+            <%= image_tag post.photo_path, width: 300, height: 300, class:"image" %>
           <% end %>          
           <td><%= post.titulo %></td>          
           <td><%= link_to 'Show', post %></td>

@@ -3,7 +3,7 @@
 <br>
 
 <%= form_tag("posts", method: "get") do %>
-  <%= label_tag(:q, "Search for:") %>  
+  <%= label_tag :q, "Search for:" %>  
   <%= select_tag 'hola', options_for_select([
     ['Animales' ,'Animales'], 
     ['Aviones', 'Aviones'], 
@@ -28,7 +28,7 @@
       <div class="col-sm-6 col-md-3">
         <div class="thumbnail tile-big ">
           <% if post.has_photo? %>
-            <%= image_tag post.photo_path %>
+            <%= image_tag post.photo_path, width: 300, heigth: 300 %>
           <% end %>          
           <td><%= post.titulo %></td>          
           <td><%= link_to 'Show', post %></td>

@@ -6,13 +6,13 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @categoria =  params[:hola]
-    if @categoria == nil
+    unless @categoria
       #@post_categoria = @posts
     else
       if @categoria == 'Todas'
         @posts = Post.all
      else
-        @posts = Post.where("categoria like ?", "%#{@categoria}%")
+        @posts = Post.where(["categoria like :hola", hola: "%#{@categoria}%"])
       end        
     end
 

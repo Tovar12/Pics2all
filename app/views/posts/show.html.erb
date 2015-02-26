@@ -7,7 +7,7 @@
 
 <p>
   <% if @post.has_photo?  %>
-  	<%= image_tag @post.photo_path %>
+  	<%= image_tag @post.photo_path,width: 300, heigth: 300 %>
   <% else %>
   	<b>There is a problema uploading the photo</b>
   <% end %>
